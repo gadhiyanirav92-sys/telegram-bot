@@ -1,0 +1,12 @@
+import telebot
+
+BOT_TOKEN = "8559099701:AAEku0fwtdiixbJrh8f8ki8R1ErRaAzon8A"
+
+bot = telebot.TeleBot(BOT_TOKEN)
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to(message, "✅ BOT IS LIVE")
+
+print("Bot started...")
+bot.infinity_polling(skip_pending=True)
